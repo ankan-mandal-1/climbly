@@ -102,7 +102,7 @@
         <div class="mobile-profile-box" style="border: none;">
             <img src="<%= result.imageUrl %>" alt="" class="mobile-profile-img">
             <h1 class="mobile-profile-name"><%= result.name %></h1>
-            <div class="mobile-profile-bio"><%= result.bio || 'No Bio Added' %></div>
+            <div class="mobile-profile-bio"><%= result.bio || 'No Bio Added' %><div class="usernam" style="margin-top: 20px;font-weight: bold;text-transform: capitalize;">- <%= result.name %></div></div>
             <div class="mobile-profile-social">
                 <a href="<%= result.facebook %>" title="Facebook">
                     <img src="/images/facebook.png" alt="facebook" class="mobile-social-icon">
