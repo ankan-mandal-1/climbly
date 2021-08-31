@@ -247,8 +247,26 @@ app.get('/dashboard', verify, async (req, res) => {
 })
 
 app.get('/dashboard/profile', verify, (req, res) => {
-    const {user_name, user_bio, user_facebook, user_instagram, user_youtube, user_public, user_image } = req.cookies;
-    res.render('Profile', {name: user_name, image: user_image, bio: user_bio || 'Add a Bio', facebook: user_facebook, instagram: user_instagram, youtube: user_youtube, public: user_public})
+
+    const token = req.cookies.user_id;
+    const uuid = jwt.verify(token, process.env.JWT);
+
+    User.findOne({uuid: uuid.user_id}, (err, result) => {
+        if(err){
+            console.log(err);
+            res.redirect('/dashboard')
+        } else {
+            res.render('Profile', {
+                name: result.name,
+                image: result.imageUrl,
+                bio: result.bio,
+                facebook: result.facebook,
+                instagram: result.instagram,
+                youtube: result.youtube,
+                public: result.public
+            })
+        }
+    })
 })
 
 app.get('/dashboard/profile/edit', verify, (req, res) => {
@@ -301,17 +319,7 @@ app.post('/dashboard/profile/edit', verify, upload.single('image'), async (req, 
                 console.log(err);
                 res.redirect('/dashboard/profile')
             } else {
-           
-
-                res.cookie('user_name', result.name, { maxAge: 180 * 24 * hour, httpOnly: true})
-                res.cookie('user_bio', result.bio, { maxAge: 180 * 24 * hour, httpOnly: true})
-                res.cookie('user_facebook', result.facebook, { maxAge: 180 * 24 * hour, httpOnly: true})
-                res.cookie('user_instagram', result.instagram, { maxAge: 180 * 24 * hour, httpOnly: true})
-                res.cookie('user_youtube', result.youtube, { maxAge: 180 * 24 * hour, httpOnly: true})
-                res.cookie('user_image', result.imageUrl, { maxAge: 180 * 24 * hour, httpOnly: true})
-                res.cookie('user_public', result.public, { maxAge: 180 * 24 * hour, httpOnly: true})
-                res.redirect('/dashboard/profile')
-                
+                res.redirect('/dashboard/profile')  
             }
         })
     
