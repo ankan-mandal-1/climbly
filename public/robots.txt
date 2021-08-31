@@ -1,2 +1,4 @@
-user-agent: *
-disallow: /dashboard/
+User-agent: *
+Allow: /
+
+Sitemap: https://www.climbly.in/sitemap
