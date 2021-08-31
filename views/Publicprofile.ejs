@@ -21,7 +21,7 @@
             "name": "<%= result.name %>",
             "image": {
                 "@type": "ImageObject",
-                "url": "https://www.climbly.in/uploads/compress/<%= result.imageUrl %>",
+                "url": "<%= result.imageUrl %>",
                 "height": 200,
                 "width": 200
             },
@@ -98,7 +98,7 @@
 
     <div class="mobile-cont">
         <div class="mobile-profile-box" style="border: none;">
-            <img src="/uploads/compress/<%= result.imageUrl %>.jpg" alt="" class="mobile-profile-img">
+            <img src="<%= result.imageUrl %>" alt="" class="mobile-profile-img">
             <h1 class="mobile-profile-name"><%= result.name %></h1>
             <div class="mobile-profile-bio"><%= result.bio || 'No Bio Added' %></div>
             <div class="mobile-profile-social">
