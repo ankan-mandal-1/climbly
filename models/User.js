@@ -9,7 +9,7 @@ const userSchema = new mongoose.Schema({
     },
     imageUrl: {
         type: String,
-        default: 'no_profile'
+        default: 'https://amw.netlify.app/no_profile.svg'
     },
     email: {
         type: String,
