@@ -594,5 +594,5 @@ app.get('*', (req, res) => {
 })
 
 app.listen(process.env.PORT, () => {
-    console.log("Server is started in PORT 3000!")
+    console.log("Server has started in PORT 3000!")
 })
