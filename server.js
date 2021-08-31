@@ -102,7 +102,6 @@ app.post('/register', body('email').isEmail().trim().escape().normalizeEmail(), 
             } else {
                 bcrypt.hash(password, 10, function(err, hash) {
                     if(err) {
-                        console.log(err);
                         res.redirect('/')
                     } else {
                     const userDetail = new User({
@@ -124,7 +123,6 @@ app.post('/register', body('email').isEmail().trim().escape().normalizeEmail(), 
                             res.cookie('user_image', result.imageUrl, { maxAge: 180 * 24 * hour, httpOnly: true})
                             res.redirect('/dashboard')
                         } else {
-                            console.log(err)
                             res.redirect('/')
                         }
                     })
@@ -156,7 +154,6 @@ app.post('/login', async (req, res) => {
 
     User.findOne({email}, async (err, foundItem) => {
         if(err){
-            console.log(err);
             res.redirect('/')
         } else {
             if(foundItem) {
@@ -219,8 +216,7 @@ app.get('/p/:user', (req, res) => {
 
     User.findOne({public}, (err, result) => {
         if(err){
-            console.log(err);
-            res.redirect('/')
+            res.redirect('404')
         } else {
             res.render('Publicprofile', {result})
         }
@@ -236,7 +232,6 @@ app.get('/dashboard', verify, async (req, res) => {
     
     await Note.find({author: uuid.user_id, status: "private"}, null, { sort: { _id: -1 } }, (err, result) => {
         if(err) {
-            console.log(err);
             res.redirect('/dashboard')
         } else {
             res.render('Dashboard', {result: result, name: name})
@@ -253,7 +248,6 @@ app.get('/dashboard/profile', verify, (req, res) => {
 
     User.findOne({uuid: uuid.user_id}, (err, result) => {
         if(err){
-            console.log(err);
             res.redirect('/dashboard')
         } else {
             res.render('Profile', {
@@ -276,7 +270,6 @@ app.get('/dashboard/profile/edit', verify, (req, res) => {
 
     User.findOne({uuid: uuid.user_id}, (err, result) => {
         if(err){
-            console.log(err);
             res.redirect('/dashboard')
         } else {
             res.render('Profileadd', {result: result})
@@ -316,7 +309,6 @@ app.post('/dashboard/profile/edit', verify, upload.single('image'), async (req, 
 
         await User.findOneAndUpdate({uuid: uuid.user_id}, {name: newName, imageUrl: dateTo, bio: newBio, facebook: newFacebook, instagram: newInstagram, youtube: newYoutube, public: publicUrl}, {new: true}, (err, result) => {
             if(err){
-                console.log(err);
                 res.redirect('/dashboard/profile')
             } else {
                 res.redirect('/dashboard/profile')  
@@ -326,7 +318,6 @@ app.post('/dashboard/profile/edit', verify, upload.single('image'), async (req, 
     } else{
         User.findOneAndUpdate({uuid: uuid.user_id}, {name: newName, bio: newBio, facebook: newFacebook, instagram: newInstagram, youtube: newYoutube, public: publicUrl}, {new: true}, (err, result) => {
             if(err){
-                console.log(err);
                 res.redirect('/dashboard/profile')
             } else {
             
@@ -354,7 +345,6 @@ app.get('/dashboard/new', verify, async (req, res) => {
     
     Note.find({author: uuid.user_id, status: "private"}, (err, result) => {
         if(err) {
-            console.log(err);
             res.redirect('/')
         } else {
             res.render('Addnew', {result: result, name: name, icon: icon})
@@ -415,7 +405,6 @@ app.post('/dashboard/delete/:id', verify, (req, res) => {
 
         Note.findByIdAndUpdate(id, {status: 'trash'}, (err, result) => {
             if(err){
-                console.log(err);
                 res.redirect('/dashboard')
             } else {
                 res.redirect('/dashboard')
@@ -435,12 +424,10 @@ app.get('/dashboard/recycle', verify, (req, res) => {
 
     Note.find({author: uuid.user_id, status: "private"}, null, { sort: { _id: -1 } }, (err, result) => {
         if(err){
-            console.log(err);
             res.redirect('/dashboard')
         } else {
             Note.find({author: uuid.user_id, status: "trash"}, null, { sort: { _id: -1 } }, (err, single) => {
                 if(err){
-                    console.log(err);
                     res.redirect('/dashboard')
                 } else {
                     res.render('Recycle', {result: result, single: single})
@@ -460,7 +447,6 @@ app.get('/dashboard/recycle/restore/:id/:author', verify, (req, res) => {
     if(uuid.user_id === authorId){
         Note.findByIdAndUpdate(id, {status: 'private'}, (err, result) => {
             if(err){
-                console.log(err);
                 res.redirect('/dashboard')
             } else {
                 res.redirect('/dashboard')
@@ -485,7 +471,6 @@ app.get('/dashboard/recycle/delete/:id/:author', verify, (req, res) => {
     if(uuid.user_id === authorId){
         Note.findByIdAndDelete(id, (err) => {
             if(err){
-                console.log(err);
                 res.redirect('/dashboard/recycle')
             } else {
                 res.redirect('/dashboard/recycle')
@@ -527,7 +512,6 @@ app.get('/dashboard/:id', verify, async (req, res) => {
 
     Note.find({author: uuid.user_id, status: "private"}, null, { sort: { _id: -1 } }, (err, result) => {
         if(err){
-            console.log(err);
             res.redirect('/dashboard')
         } else {
             Note.findById(id, (err, single) => {
@@ -561,13 +545,11 @@ app.post('/dashboard/:id', verify, async (req, res) => {
 
     Note.findById(id, (err, result) => {
         if(err){
-            console.log(err);
             res.redirect('/dashboard')
         } else {
             if(uuid.user_id === result.author){
                 Note.findByIdAndUpdate(id, {title: title, body: body}, (err, result) => {
                     if(err){
-                        console.log(err)
                         res.redirect('/dashboard')
                     } else {
                         if(device === "mobile"){
