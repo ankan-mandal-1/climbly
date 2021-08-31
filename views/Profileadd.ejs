@@ -30,7 +30,7 @@
 
         <form action="/dashboard/profile/edit" method="POST" enctype="multipart/form-data" onsubmit="return getContent()">
             <div class="mobile-profile-box">
-                <img src="/uploads/compress/<%= result.imageUrl %>.jpg" alt="" class="mobile-profile-img">
+                <img src="<%= result.imageUrl %>" alt="" class="mobile-profile-img">
                 <div class="profile-edit-outer">
                     <label>Choose a profile image</label>
                     <input type="file" name="image" accept="image/*" onchange="loadFile(event)" class="file">
