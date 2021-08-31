@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <meta name="title" content="Dashboard - Climbly" />
+    <title>Dashboard - Climbly</title>
+    <meta content="Climbly is the simplest notes taking app across all your devices. Climbly is available in all deceives and 100% free" name="description" />
+    <link rel="shortcut icon" type="img/png" href="/images/favicon.png">
+    <meta content="climbly, climbly.in, simple notes taking, climbly notes taking, best and free notes taking app, note taking website climbly" name="keywords" />
+    <meta name="robots" content="noindex">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/media-style.css">
+    <link rel="stylesheet" href="/mobile.css">
+    <style>.active{ background-color: #dedbd5cc; }</style>
+</head>
+<body>
+    <%- include('sidebar.ejs'); -%>
+    <%- include('topnav.ejs'); -%>
+    <div class="container">
+        <div class="content">
+            <div class="profile">
+                <div class="text">Get Started By Creating a Note</div>
+                <img src="./images/dashboard.png" alt="Workspace" class="dashboard-pic">
+                <div class="notebox">
+                    <a href="/dashboard/new" class="create-btn">
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px" viewBox="0 0 226 226"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,226v-226h226v226z" fill="none"></path><g fill="#ffffff"><path d="M49.4375,28.25c-11.61782,0 -21.1875,9.56968 -21.1875,21.1875v127.125c0,11.61782 9.56968,21.1875 21.1875,21.1875h82.39583v-44.72917c0,-11.78731 9.40019,-21.1875 21.1875,-21.1875h44.72917v-82.39583c0,-11.61782 -9.56968,-21.1875 -21.1875,-21.1875zM72.97917,65.90747h80.04167c3.8985,0 7.0625,3.164 7.0625,7.0625c0,3.8985 -3.164,7.0625 -7.0625,7.0625h-80.04167c-3.8985,0 -7.0625,-3.164 -7.0625,-7.0625c0,-3.8985 3.164,-7.0625 7.0625,-7.0625zM72.97917,98.8658h61.20833c3.8985,0 7.0625,3.164 7.0625,7.0625c0,3.8985 -3.164,7.0625 -7.0625,7.0625h-61.20833c-3.8985,0 -7.0625,-3.164 -7.0625,-7.0625c0,-3.8985 3.164,-7.0625 7.0625,-7.0625zM155.375,145.95833c-5.20271,0 -9.41667,4.21396 -9.41667,9.41667v38.22762l47.64429,-47.64429z"></path></g></g></svg>
+                        Create a New Note
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mobile-cont">
+        <% if(result.length === 0){ %>
+            <div class="profile">
+                <div class="text">Get Started By Creating a Note</div>
+                <img src="./images/dashboard.png" alt="Workspace" class="dashboard-pic">
+                <div class="notebox">
+                    <a href="/dashboard/mobile-new" class="create-btn">
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px" viewBox="0 0 226 226"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,226v-226h226v226z" fill="none"></path><g fill="#ffffff"><path d="M49.4375,28.25c-11.61782,0 -21.1875,9.56968 -21.1875,21.1875v127.125c0,11.61782 9.56968,21.1875 21.1875,21.1875h82.39583v-44.72917c0,-11.78731 9.40019,-21.1875 21.1875,-21.1875h44.72917v-82.39583c0,-11.61782 -9.56968,-21.1875 -21.1875,-21.1875zM72.97917,65.90747h80.04167c3.8985,0 7.0625,3.164 7.0625,7.0625c0,3.8985 -3.164,7.0625 -7.0625,7.0625h-80.04167c-3.8985,0 -7.0625,-3.164 -7.0625,-7.0625c0,-3.8985 3.164,-7.0625 7.0625,-7.0625zM72.97917,98.8658h61.20833c3.8985,0 7.0625,3.164 7.0625,7.0625c0,3.8985 -3.164,7.0625 -7.0625,7.0625h-61.20833c-3.8985,0 -7.0625,-3.164 -7.0625,-7.0625c0,-3.8985 3.164,-7.0625 7.0625,-7.0625zM155.375,145.95833c-5.20271,0 -9.41667,4.21396 -9.41667,9.41667v38.22762l47.64429,-47.64429z"></path></g></g></svg>
+                        Create a New Note
+                    </a>
+                </div>
+            </div>
+        <% } else { %>
+            <% result.forEach(data => { %>
+                <a href="/dashboard/m/<%= data._id %>">
+                <div class="mobile-box">
+                    <div class="mobile-emoji"><img src="/images/emoji/small/<%= data.icon %>.png" height="25px" width="25px" alt="emoji"></div>
+                    <div class="mobile-title">
+                        <%= data.title %>
+                    </div>
+                    <div class="mobile-date">
+                        
+                    </div>
+                </div>
+                </a>
+                <% }) %>
+        <% } %>
+        
+    </div>
+
+    <%- include('bottomnav.ejs'); -%>
+
+    <script>
+        document.querySelector('#homee').innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="#2C2A24" viewBox="0 0 24 24"><g data-name="Layer 2"><g data-name="home"><rect width="24" height="24" opacity="0"/><rect width="4" height="7" x="10" y="14"/><path fill="#2C2A24" d="M20.42 10.18L12.71 2.3a1 1 0 0 0-1.42 0l-7.71 7.89A2 2 0 0 0 3 11.62V20a2 2 0 0 0 1.89 2H8v-9a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v9h3.11A2 2 0 0 0 21 20v-8.38a2.07 2.07 0 0 0-.58-1.44z"/></g></g></svg>';
+    </script>
+</body>
+</html>

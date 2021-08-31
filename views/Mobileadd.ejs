@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <meta name="title" content="Add a new note - Climbly" />
+    <title>Add a new note - Climbly</title>
+    <meta content="Climbly is the simplest notes taking app across all your devices. Climbly is available in all deceives and 100% free" name="description" />
+    <link rel="shortcut icon" type="img/png" href="/images/favicon.png">
+    <meta content="climbly, climbly.in, simple notes taking, climbly notes taking, best and free notes taking app, note taking website climbly" name="keywords" />
+    <meta name="robots" content="noindex">
+    <link rel="stylesheet" href="/style.css">  
+    <link rel="stylesheet" href="/media-style.css">
+    <link rel="stylesheet" href="/mobile.css">
+</head>
+<body>
+    
+    <%- include('topnav.ejs'); -%>
+    <form action="/dashboard/addnew" method="POST" onsubmit="return getContent()">
+        <div class="mobile-cont" style="margin-top: 75px;">
+            <div class="icon">
+                <img src="/images/emoji/<%= icon %>.png" alt="icon" width="70px" height="70px"><input type="hidden" name="icon" value="<%= icon %>" />
+            </div>
+            <div class="title">
+                <textarea name="title" class="title-textarea" placeholder="Untitled" onclick="changeBtnColor()" required></textarea>
+            </div>
+            <div class="para">
+                <div class="divarea" spellcheck="true" style="min-height: 225px;" contenteditable="true" id="my-content" onclick="changeBtnColor()"></div>
+            </div>
+            <textarea id="my-textarea" name="body" style="display:none"></textarea>
+            <input type="hidden" value="mobile" name="device" />
+            <button class="mobile-save">Save</button>
+        </div>
+    </form>
+
+    <%- include('bottomnav.ejs'); -%>   
+    
+
+    <script src="/savebtn.js"></script>
+    <script>
+        document.querySelector('#addd').innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 67.733 67.733"><path fill="#2C2A24" d="m 18.093994,231.51897 c -8.730218,0 -15.8414243,7.11171 -15.8414243,15.84193 v 31.54484 c 0,8.73021 7.1112063,15.84193 15.8414243,15.84193 h 31.544843 c 8.730218,0 15.841927,-7.11172 15.841927,-15.84193 V 247.3609 c 0,-8.73022 -7.111709,-15.84193 -15.841927,-15.84193 z m 0,5.29321 h 31.544843 c 5.890154,0 10.549228,4.65854 10.549228,10.54872 v 31.54484 c 0,5.89016 -4.659074,10.54871 -10.549228,10.54871 H 18.093994 c -5.890154,0 -10.5487257,-4.65855 -10.5487257,-10.54871 V 247.3609 c 0,-5.89018 4.6585717,-10.54872 10.5487257,-10.54872 z m 16.394854,8.06825 a 2.6460979,2.6460979 0 0 0 -2.607575,2.68149 v 12.75219 H 19.131135 a 2.6460979,2.6460979 0 1 0 0,5.29063 h 12.750138 v 12.75013 a 2.6466006,2.6466006 0 1 0 5.293201,0 v -12.75013 h 12.74961 a 2.6460979,2.6460979 0 1 0 0,-5.29063 h -12.74961 v -12.75219 a 2.6460979,2.6460979 0 0 0 -2.685626,-2.68149 z" color="#000" font-family="sans-serif" font-weight="400" overflow="visible" transform="translate(0 -229.267)" style="line-height:normal;font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-feature-settings:normal;text-indent:0;text-align:start;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000;text-transform:none;text-orientation:mixed;shape-padding:0;isolation:auto;mix-blend-mode:normal"/></svg>';
+       
+        function getContent(){
+            var div_val = document.getElementById("my-textarea");
+            div_val.value = document.getElementById("my-content").innerHTML;
+
+            if (div_val.value == '') {
+                alert("Please write something...")
+                return false;
+                //empty form will not be submitted. You can also alert this message like this.
+            }
+            document.querySelector('.mobile-save').innerHTML = '<svg version="1.1" id="L9" xmlns="http://www.w3.org/2000/svg" width="25px" height="30px" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="20 20 60 60" enable-background="new 0 0 0 0" xml:space="preserve"><path fill="#fff" d="M73,50c0-12.7-10.3-23-23-23S27,37.3,27,50 M30.9,50c0-10.5,8.5-19.1,19.1-19.1S69.1,39.5,69.1,50"><animateTransform attributeName="transform" attributeType="XML" type="rotate" dur="1s" from="0 50 50" to="360 50 50" repeatCount="indefinite"></animateTransform></path></svg><span class="savetext">&nbsp; Save</span>';
+        }
+
+        
+    </script>
+
+</body>
+</html>
+

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <meta name="title" content="Recycle Bin - Climbly" />
+    <title>Recycle Bin - Climbly</title>
+    <meta content="Climbly is the simplest notes taking app across all your devices. Recycle bin helps you to restore or delete notes permanently" name="description" />
+    <link rel="shortcut icon" type="img/png" href="/images/favicon.png">
+    <meta content="climbly, climbly.in, simple notes taking, climbly notes taking, best and free notes taking app, note taking website climbly" name="keywords" />
+    <meta name="robots" content="noindex">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/media-style.css">
+    <link rel="stylesheet" href="/mobile.css">
+</head>
+<body>
+    <%- include('sidebar.ejs'); -%>
+    <%- include('topnav.ejs'); -%>
+      
+    <div class="container" style="display: block; margin-bottom:100px">
+        <div class="content" style="max-width: 1000px; text-align: center; color: #72706b;">
+            <% if (single.length === 0){ %>
+                <img src="/images/no-item.png" alt="empty" class="recycle-empty" /><br/>
+                No Item in your Recycle Bin
+            <% } else { %>
+                <% single.forEach((single) => { %>
+                    <div class="recycle-box">
+                        <img src="/images/emoji/<%= single.icon %>.png" class="recycle-img" alt="icon" />
+                        <div class="recycle-text" title="Title here">
+                            <%= single.title %>
+                        </div>
+                        
+                        <div class="restore">
+                            <a href="/dashboard/recycle/restore/<%= single._id %>/<%= single.author %>">
+                                <div class="restore-btn"><img src="/images/restore.png" class="recyclepage-icon" alt="restore" /> Restore</div>
+                            </a>
+                        </div>
+                        
+                        
+                            <div class="delete-parma">
+                                <a href="/dashboard/recycle/delete/<%= single._id %>/<%= single.author %>">
+                                    <div class="delete-btn"><img src="/images/delete.png" class="recyclepage-icon" alt="Delete" /> Delete Permanently</div>
+                                </a>
+                            </div>
+                    </div>
+                <% }) %>
+            <% } %>
+        </div>
+    </div>
+
+    <%- include('bottomnav.ejs'); -%>
+<script>
+    document.querySelector('.bin').style.backgroundColor = "#e8e7e3";
+</script>
+</body>
+</html>
