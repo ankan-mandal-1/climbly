@@ -1,0 +1,76 @@
+@media only screen and (max-width: 359px) {
+    .inputbox{
+        width: 244px;
+    }
+    .btn {
+        width: 266px;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    body{
+        /* background-color: gray; */
+    }
+    .mobile-login{
+        margin-bottom: 25px;
+        display: block;
+    }
+    .hamger{
+        display: block;
+    }
+    .menu-block{
+        display: none;
+    }
+    .home-img-cont{
+        float: none;
+        position: none;
+        left: 0 !important;
+        text-align: center;
+        width: 100%;
+    }
+    .home-img {
+        width: 96%;
+    }
+    .slogan{
+        font-size: 25px;
+    }
+    .support {
+        font-size: 12px;
+        margin-top: 15px;
+    }
+    .replace{
+        margin-top: 38px;
+        margin-bottom: 25px;
+        font-size: 16px;
+    }
+    .replace img {
+        height: 20px;
+    }
+    .log{
+        display: none;
+    }
+    .content{
+        width: 100%;
+        margin: auto;
+        float: none;
+        margin-top: 45px;
+    }
+    .btn{
+        margin-bottom: 20px;
+    }
+    .already{
+        font-size: 15px;
+        padding: 15px 0 10px;
+        color: #37352fad;
+        display: inline;
+    }
+    .already a{
+        color: #0072d4;
+    }
+}
+
+@media only screen and (max-width: 1125px) {
+    .home-img-cont{ 
+        left: 10px;
+    }
+}

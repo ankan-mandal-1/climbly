@@ -1,0 +1,108 @@
+@media only screen and (max-width: 1050px) {
+    body {
+      /* background-color: lightblue; */
+      margin: 0;
+    }
+    .mobile{
+        display: block;
+        background-color: #f7f6f3;
+        border-bottom: 1px solid #e2e2e0;
+        /* height:45px; */
+        position: sticky;
+        top: 0;
+    }
+    .hamgar{
+        padding: 10px;
+    }
+    .setting{
+        top: 6px;
+        right: 3px;
+    }
+    .edit{
+        position: absolute;
+        top: 54px;
+        right: 8px;
+    }
+    .delete{
+        position: absolute;
+        top: 54px;
+        right: 128px;
+    }
+    .sidebar{
+        display: block;
+        box-shadow: 1px 2px 5px rgb(0 0 0 / 41%);
+        transition: 0.34s;
+        width: 0px
+    }
+    .closebtn{
+        right: 10px;
+        position: absolute;
+        top: 0px;
+        font-size: 37px;
+        color: #797874;
+        display: none;
+    }
+    .hide{
+        display: none;
+    }
+    .container{
+        margin-left:0;
+        margin-top: 90px;
+        padding: 0 15px;
+    }
+    .icon-emoji{
+        width: 60px;
+        height: 60px;
+    }
+    .title{
+        margin: 0;
+    }
+    .title-textarea {
+        font-size: 29px;
+    }
+    .text{
+        font-size: 30px;
+    }
+    /*----------------Setting---------------*/
+    .setting-block{
+        top: 44px;
+        right: 2px;
+        z-index: 1;
+    }
+    .recycle-box {
+        width: 240px;
+    }
+    .recycle-img {
+        width: 55px;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    .container{
+        display: none;
+    }
+    .edit{
+        display: none;
+    }
+    .sidebar{
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 650px) {
+    .top-nav{
+        display: none;
+    }
+    .button-nav{
+        display: none;
+    }
+    .container{
+        display: block;
+    }
+    .edit{
+        display: block;
+    }
+    .mobile-cont{
+        display: none;
+    }
+}

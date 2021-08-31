@@ -1,0 +1,191 @@
+body{
+    margin:0;
+    font-family: inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol" ;
+}
+.top-nav{
+    box-shadow: 0px 1px 2px 0px rgb(0 0 0 / 24%);
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    text-align: center;
+    background-color: #fff;
+}
+.top-logo{
+    padding: 10px 0 8px 0;
+    text-align: center;
+}
+.button-nav{
+    box-shadow: 0px -1px 2px 0px rgb(0 0 0 / 18%);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    text-align: center;
+    right: 0;
+    background-color: #fff;
+}
+.button-icon{
+    width: 33%;
+    padding: 12px 0;
+    float: left;
+}
+/*---------------------------------------*/
+
+.mobile-cont{
+    margin-top: 48px;
+    margin-bottom: 90px;
+    padding: 0 20px;
+}
+.mobile-box{
+    border: 1px solid #e2e2e2;
+    max-width: 330px;
+    border-radius: 4px;
+    margin: auto;
+    margin-top: 28px;
+}
+.mobile-emoji{
+    padding: 8px;
+}
+.mobile-title{
+    padding: 0 2px 10px 10px;
+    font-size: 20px;
+    font-weight: 500;
+    color: #3c3931;
+}
+.mobile-date{
+    text-align: right;
+    font-size: 12px;
+    padding: 0 8px 8px 0;
+    color: #949089;
+}
+
+/*---------------------------------------*/
+.mobile-profile-box{
+    text-align: center;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 20px 0 30px 0;
+}
+.mobile-profile-edit{
+    text-align: center;
+    margin-top: 17px;
+    padding: 10px 0;
+    border-radius: 3px;
+    background: rgb(136 221 255 / 15%);
+    color: #1676b5;
+    box-shadow: rgb(15 15 15 / 10%) 0px 1px 2px, rgb(22 149 246 / 40%) 0px 0px 0px 1px inset;
+}
+.mobile-profile-img{
+    width: 100px;
+    height:100px;
+    border-radius: 50%;
+    margin: 15px 0;
+    background: #e2e2e2;
+    overflow: hidden;
+    object-fit: cover;
+}
+.mobile-profile-name{
+    font-size: 20px;
+    color: #3c3933;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+.mobile-profile-bio{
+    max-width: 320px;
+    margin: auto;
+    word-break: break-word;
+    margin-top: 16px;
+    font-size: 14px;
+    color: #585252;
+}
+.mobile-profile-social{
+    margin-top:10px;
+}
+.mobile-social-icon{
+    width: 36px;
+    height: 36px;
+    padding: 10px 15px;
+}
+.mobile-profile-btn{
+    padding: 15px 8px;
+    border-bottom: 1px solid #e0e0e0;
+}
+.mobile-profile-link{
+    text-decoration: none;
+    color: #5a5858;
+}
+.copyright{
+    text-align: center;
+    margin: 25px 0;
+    color: gray;
+    font-size: 12px;
+}
+/*----------------------------------------------*/
+.mobile-profile-box label{
+    font-size: 13px;
+    color: #2d2929;
+}
+.mobile-profile-input{
+    display: block;
+    width: 96%;
+    padding: 2%;
+    font-size: 14px;
+    margin-bottom:20px;
+    border-radius: 4px;
+    border: 1px solid #d0d0d0;
+    outline: none;
+    font-family: inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol" ;
+}
+.mobile-profile-text{
+    display: block;
+    width: 96%;
+    padding: 2%;
+    font-size: 14px;
+    border-radius: 4px;
+    border: 1px solid #d0d0d0;
+    outline: none;
+    min-height: 75px;
+    margin-bottom: 20px;
+    text-align: left;
+    font-family: inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol" ;
+}
+.profile-edit-outer{
+    text-align: left;
+}
+.mobile-profile-edit-save{
+    text-align: center;
+    margin-top: 17px;
+    padding: 10px 0;
+    width: 100%;
+    border: none;
+    border-radius: 3px;
+    background: rgb(136 221 255 / 15%);
+    color: #1676b5;
+    box-shadow: rgb(15 15 15 / 10%) 0px 1px 2px, rgb(22 149 246 / 40%) 0px 0px 0px 1px inset;
+}
+
+/*---------------------------------------------*/
+.mobile-save{
+    color: #FFFFFF;
+    background: #e16259;
+    border: 1px solid #be5643;
+    box-shadow: 0 1px 2px rgb(15 15 15 / 10%);
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 15px;
+    width: 100%;
+    padding: 12px 0;
+    margin-top: 30px;
+}
+.mobile-delete{
+    color: #FFFFFF;
+    background: #24aaea;
+    border: 1px solid #1b95d0;
+    box-shadow: 0 1px 2px rgb(15 15 15 / 10%);
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 15px;
+    width: 100%;
+    padding: 12px 0;
+    margin-top: 20px;
+}

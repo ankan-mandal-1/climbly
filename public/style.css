@@ -1,0 +1,354 @@
+    /* width */
+    ::-webkit-scrollbar {
+        width: 14px;
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+        background: #edece9; 
+        }
+        
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+        background: #d3d1cb; 
+        }
+
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+        background: rgb(174, 172, 166); 
+        }
+        html{
+            -webkit-tap-highlight-color: rgba(0,0,0,0);
+            -webkit-tap-highlight-color: transparent;
+        }
+        body{
+            font-family: inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol" ;
+            outline: none !important;
+            background-color: #ffffff;
+        }
+        a{
+            text-decoration: none;
+        }
+        .sidebar{
+            background: #f7f6f3;
+            width: 240px;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            color: #19171199;
+            font-family: inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol" ;
+            font-weight: 500;
+        }
+        .sidebar a{
+            color: #19171199;
+        }
+        .closebtn{
+            display: none;
+        }
+        .logo{
+            text-align: left;
+            padding: 15px 0px 10px 15px;
+            cursor: pointer;
+        }
+        .logo-img{
+            width: 66%;
+            width: 66%;
+            -webkit-user-drag: none;
+            user-select: none;
+        }
+        .shelf{
+            overflow: scroll;
+            max-height: 80vh;
+            overflow-x: hidden;
+        }
+        .book{
+            padding: 8px 0;
+        }
+        .category{
+            padding: 4px 15px;
+        }
+        .page{
+            cursor: pointer;
+            padding: 4px 8px 4px 25px;
+        }
+        .page:hover{
+            background: rgb(232,231,227);
+        }
+        .sidebar-small-icon{width:20px; height:20px;}
+        .new-block{
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 240px;
+            background: #f7f6f3;
+        }
+        .new{
+            text-align: center;
+            padding: 20px;
+            border-top: 1px solid #e6e4e1;
+            cursor: pointer;
+        }
+        .new:hover{
+            background: rgb(232,231,227);
+        }
+        .tool-icon{
+            width: 18px;
+            border: 1px solid #ececec;
+            padding: 8px;
+            float: right;
+            margin: 0 0 0 6px;
+            border-radius: 3px;
+            background-color: #f9f9f9;
+        }
+        
+        .container{
+            max-width: 100%;
+            margin: auto;
+            margin-top: 100px;
+            padding: 8px;
+            margin-left: 240px;
+
+        }
+        .icon-emoji{
+            width: 78px;
+            height: 78px;
+        }
+        .content{
+            max-width: 710px;
+            margin: auto;
+    
+        }
+        .title{   
+            word-break: break-word;
+            color: rgb(55, 53, 47);
+            font-weight: 700;
+            line-height: 1.2;
+            font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+            cursor: text;
+            margin: 8px 0 4px 0;
+        }
+        .para{
+            padding-top:20px;
+            outline: none;
+        }
+        .para .divarea{
+            outline: none;
+            line-height: 1.2;
+            font-size: 18px;
+            min-height: 700px;
+            cursor: text;
+            word-break: break-word;
+        }
+        .edit{
+            position: fixed;
+            top:10px;
+            right:55px;
+        }
+
+        .save{
+            height: 36px;
+            padding-left: 12px;
+            padding-right: 12px;
+            color: #FFFFFF;
+            background: #8c8c8c;
+            border: 1px solid #737272;
+            box-shadow: 0 1px 2px rgb(15 15 15 / 10%);
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 15px;
+            cursor: not-allowed;
+        }
+        .savetext{
+            position: relative;
+            top: -9px;
+            font-size: 15px;
+        }
+        .delete{
+            height: 36px;
+            color: #FFFFFF;
+            background: #24aaea;
+            border: 1px solid #1b95d0;
+            box-shadow: 0 1px 2px rgb(15 15 15 / 10%);
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 15px;
+            position: fixed;
+            top: 10px;
+            right: 180px;
+        }
+        /* --------------------Dashboard------------------- */
+        .dashboard{   
+            padding: 4px 15px;
+            margin: 8px 0 4px;
+            cursor: pointer;
+        }
+        .dashboard:hover{
+            background: rgb(232,231,227);
+        }
+        .profile{
+            text-align: center;
+            margin-bottom: 120px;
+        }
+        .text{
+            font-size: 38px;
+            font-weight: bold;
+            letter-spacing: -0.005em;
+        }
+        .dashboard-pic{
+            max-width: 290px;
+            margin: 70px 0;
+        }
+        .create-btn{
+            color: #FFFFFF;
+            background: #24aaea;
+            border: 1px solid #1b95d0;;
+            box-shadow: 0 1px 2px rgb(15 15 15 / 10%);
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 18px;
+            text-decoration: none;
+            padding: 14px 30px;
+            margin-top: 20px;       
+        }
+        /* ---------------- New Page --------------------------*/
+        .title-textarea{
+            word-break: break-word;
+            margin: 25px 0 18px;
+            font-weight: 700;
+            line-height: 1.2;
+            font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+            cursor: text;
+            width: 100%;
+            font-size: 34px;
+            border: 0;
+            outline: none;
+            min-height: 105px;
+            color: #37352f;
+        }
+
+        .title-textarea::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+            color: #eae9e7;
+            opacity: 1; /* Firefox */
+        }
+
+        .divarea[contenteditable]:empty::before {
+            content: "Start writing something...";
+            color: #afaeac;
+        }
+
+        /*------------------Setting--------------------------*/
+        .setting{
+            position: fixed;
+            top: 12px;
+            right: 10px;
+            cursor: pointer;
+            border: none;
+            background: none;
+        }
+        .setting-block{
+            position: fixed;
+            top: 60px;
+            right: 11px;
+            width: 270px;
+            text-align: center;
+            border-radius: 5px;
+            color: #696861 !important;
+            background: #fff;
+            box-shadow: 0px 1px 3px 0px rgb(0 0 0 / 30%);
+            padding-bottom: 4px;
+            display: none;
+        }
+        .setting-arrow{
+            width: 10px;
+            height: 10px;
+            background-color: white;
+            position: relative;
+            right: -245px;
+            border: 1px solid #e0e0e0;
+            border-width: 1px 0px 0px 1px;
+            top: -6px;
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+        .line{
+            border-bottom: 1px solid #dedede;
+        }
+        .setting-block a{
+            color: #696861 !important;
+        }
+        .setting-btn{
+            /* padding: 30px 100px;
+            border-radius: 4px;
+            color: #72706b;
+            font-size: 20px;
+            font-weight: 500;
+            box-shadow: 0px 1px 4px 0px rgb(0 0 0 / 20%);
+            background: #f7f6f3; */
+        }
+        .setting-box{
+            padding: 8px 0;
+        }
+        .setting-box:hover {
+            background: rgb(232,231,227);
+        }
+
+        /*------------------------Recycle Bin-------------------*/
+        .recycle-box{
+            width: 260px;
+            padding: 15px;
+            box-shadow: 0 1px 3px rgb(15 15 15 / 40%);
+            border-radius: 3px;
+            margin: 10px;
+            display: inline-block;
+            text-align: left;
+            background: #fffefc;
+        }
+        .recycle-img{
+            width: 70px;
+            margin-bottom: 10px;
+        }
+        .recycle-text{
+            font-size: 20px;
+            font-weight: 600;
+            padding: 0 0 10px 0;
+            height: 100px;
+            overflow: hidden;
+        }
+        .restore{
+            margin: 10px 0;
+        }
+        .restore-btn{
+            width: 100%;
+            padding: 10px 0;
+            font-size: 16px;
+            box-shadow: 0 1px 2px rgb(15 15 15 / 10%);
+            border-radius: 3px;
+            color: #fff;
+            background: #2196f3;
+            border: 1px solid #1074c3;
+            cursor: pointer;
+            text-align: center;
+        }
+        .delete-btn{
+            width: 100%;
+            padding: 10px 0;
+            font-size: 16px;
+            box-shadow: 0 1px 2px rgb(15 15 15 / 10%);
+            border-radius: 3px;
+            color: #fff;
+            background: #e16259;
+            border: 1px solid #be5643;
+            cursor: pointer;
+            text-align: center;
+        }
+        .recycle-empty{
+            width:200px;
+        }
+        .recyclepage-icon{
+            width:18px;
+            position: relative;
+            top: 3px;
+        }
+
+       
