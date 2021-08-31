@@ -38,7 +38,7 @@ app.use(express.json())
 app.use(cookieParser())
 app.use(express.static(__dirname + "/public"));
 
-mongoose.connect('mongodb://localhost/notional', { useNewUrlParser: true,  useUnifiedTopology: true, useFindAndModify: false  })
+mongoose.connect(process.env.DB, { useNewUrlParser: true,  useUnifiedTopology: true, useFindAndModify: false  })
 
 const User = require('./models/User')
 const Note = require('./models/Note');
