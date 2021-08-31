@@ -223,7 +223,7 @@ app.get('/p/:user', (req, res) => {
 
     User.findOne({public}, (err, result) => {
         if(err){
-            res.redirect('404')
+            res.render('404')
         } else {
             res.render('Publicprofile', {result})
         }
