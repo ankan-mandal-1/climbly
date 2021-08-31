@@ -14,6 +14,13 @@ const sanitizeHtml = require('sanitize-html');
 const multer = require('multer');
 const sharp = require('sharp');
 const path = require('path')
+const cloudinary = require("cloudinary");
+
+cloudinary.config({
+    cloud_name: 'dfflk6oiq',
+    api_key: '924287212334238',
+    api_secret: 'I4JTW32UZGDX8o-JdRkp3yDmzeU'
+});
 
 //Multer Connection-------------------------------------------------------------
 var storage = multer.diskStorage({
@@ -307,13 +314,16 @@ app.post('/dashboard/profile/edit', verify, upload.single('image'), async (req, 
           console.log(response);
         }).catch(err => console.log("200: " + err))
 
-        await User.findOneAndUpdate({uuid: uuid.user_id}, {name: newName, imageUrl: dateTo, bio: newBio, facebook: newFacebook, instagram: newInstagram, youtube: newYoutube, public: publicUrl}, {new: true}, (err, result) => {
-            if(err){
-                res.redirect('/dashboard/profile')
-            } else {
-                res.redirect('/dashboard/profile')  
-            }
-        })
+        await cloudinary.v2.uploader.upload("./public/uploads/compress/" + dateTo + '.jpg', function(error, result) {
+            User.findOneAndUpdate({uuid: uuid.user_id}, {name: newName, imageUrl: result.secure_url, bio: newBio, facebook: newFacebook, instagram: newInstagram, youtube: newYoutube, public: publicUrl}, {new: true}, (err, result) => {
+                if(err){
+                    console.log(err);
+                    res.redirect('/dashboard/profile')
+                } else {
+                    res.redirect('/dashboard/profile')
+                }
+            })
+        });
     
     } else{
         User.findOneAndUpdate({uuid: uuid.user_id}, {name: newName, bio: newBio, facebook: newFacebook, instagram: newInstagram, youtube: newYoutube, public: publicUrl}, {new: true}, (err, result) => {
