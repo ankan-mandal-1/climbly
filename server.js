@@ -117,6 +117,7 @@ app.post('/register', body('email').isEmail().trim().escape().normalizeEmail(), 
                         password: hash,
                         uuid,
                         public: publicUrl,
+                        verified: "false",
                     }).save((err, result) => {
                         if(!err){
 
