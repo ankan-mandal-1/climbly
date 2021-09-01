@@ -50,6 +50,9 @@ const userSchema = new mongoose.Schema({
     public: {
         type: String,
         required: true,
+    },
+    verified: {
+        type: String,
     }
 });
 
