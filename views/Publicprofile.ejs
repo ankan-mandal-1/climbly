@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <%- include('meta.ejs'); -%>
     <meta content="<%= result.name + ' - ' + result.bio  || result.name + ' - Climbly is the simplest notes taking app across all your devices. Connect with' + ' ' + result.name + ' ' + 'now' %>" name="description" />
     <link rel="shortcut icon" type="img/png" href="/images/favicon.png">
     <meta content="<%= result.name %>, <%= result.name %> climbly, climbly <%= result.name %>, <%= result.name %> climbly.in" name="keywords" />
