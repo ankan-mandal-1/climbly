@@ -53,7 +53,7 @@ const Note = require('./models/Note');
 app.get('/', (req, res) => {
 
         const token = req.cookies.user_id;
-        const id = req.cookies.last_page;
+        const id = req.cookies.last_page; 
 
         if (!token){
             res.render('Home', {errorLog: "", errorReg: ""})
